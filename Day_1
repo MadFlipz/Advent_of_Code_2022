@@ -1,0 +1,19 @@
+boss_elf = []
+total = 0
+sum3 = 0
+with open("DIRECTORY\\Puzzle1_Input.txt") as f:
+    f_input = f.read()
+    f_elf = f_input.split("\n")
+    for item in f_elf:
+        if not item:
+            boss_elf.append(total)
+            total = 0
+            continue
+        else:    
+            total += int(item)
+    best_elf = max(boss_elf)
+    boss_elf.sort(reverse=True)
+    for food in boss_elf[:3]:
+        sum3 += food
+print(best_elf)
+print(sum3)
